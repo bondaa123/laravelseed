@@ -1,3 +1,4 @@
+
 <?php
 
 use Illuminate\Database\Migrations\Migration;
@@ -13,7 +14,8 @@ return new class extends Migration
     {
         Schema::create('courts', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('court_id')->constrained();
+            $table->unsignedBigInteger('court_type_id');
+            $table->foreign('court_type_id')->references('id')->on('court_types');
             $table->text('name');
             $table->integer('price');
             $table->timestamps();
