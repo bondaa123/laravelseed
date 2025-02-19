@@ -19,7 +19,7 @@ class court_typeSeeder extends Seeder
 
         for($i=1; $i <=10; $i++) {
             DB::table('court_types')->insert([
-                'name' =>'Lapangan'.$faker->numberBetween(1,10),
+                'name' =>'type'.$faker->numberBetween(1,10),
         ]);
         }
     }
